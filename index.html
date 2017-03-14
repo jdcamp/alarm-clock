@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <script type="text/javascript" src="./build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
 
     <title>Alarm Clock and Weather</title>
-  </head>
-  <body>
-    <h3>Well look at the time! </h3>
-    <h3 id="time"></h3>
+</head>
 
-    <h3 id="alarm"></h3>
+<body>
+    <div class="container">
+        <h3>Well look at the time! </h3>
+        <h3 id="time"></h3>
+        <h3 id="alarm"></h3>
+        <h3>Set an Alarm</h3>
+        <form id="alarm-button">
+            <label for="time">What time?</label>
+            <input required type="time" step="1" name="time">
+            <button type="submit" name="button">Set Alarm</button>
+        </form>
+    </div>
+    <div class="container">
+        <h3>Weather</h3>
+        <form id="weather-form">
+            <label for="location">Please enter a location</label>
+            <input type="text" name="location" value="">
+            <button type="submit" name="button">Find Weather</button>
+        </form>
+        <div class="showWeather"></div>
+    </div>
 
+</body>
 
-    <h3>Set an Alarm</h3>
-    <form id="alarm-button">
-      <label for="time">What time?</label>
-      <input required type="time" step="1" name="time">
-      <button type="submit" name="button">Set Alarm</button>
-    </form>
-  </body>
 </html>
