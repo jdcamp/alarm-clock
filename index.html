@@ -4,6 +4,8 @@
 <head>
     <script type="text/javascript" src="./build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+
 
     <title>Alarm Clock and Weather</title>
 </head>
@@ -22,12 +24,32 @@
     </div>
     <div class="container">
         <h3>Weather</h3>
-        <form id="weather-form">
+        <form id="weather-form autocomplete">
             <label for="location">Please enter a location</label>
             <input type="text" name="location" value="">
             <button type="submit" name="button">Find Weather</button>
         </form>
         <div class="showWeather"></div>
+    </div>
+    <div class="container">
+        <h3>LinkedIn</h3>
+        <form id="linkedin-form">
+            <label for="location">Please enter a location</label>
+            <input type="text" name="location" value="">
+            <button type="submit" name="button">Call linkedIn</button>
+        </form>
+        <div class="showLinkedIn"></div>
+        <input type="text" id="autocomplete" />
+
+        <script>
+            var input = document.getElementById('autocomplete');
+            var autocomplete = new google.maps.places.Autocomplete(input, {
+                types: ['(cities)']
+            });
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+            })
+        </script>
     </div>
 
 </body>
